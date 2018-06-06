@@ -27,13 +27,13 @@
         <div class="navbar-header">
             <!-- Button for smallest screens -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-            <a class="navbar-brand" href="/index">
+            <a class="navbar-brand" href="index.html">
                 <img src="{{ asset('images/logo.png') }}" alt="Techro HTML5 template"></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right mainNav">
                 <li class="active"><a href="/index">首页</a></li>
-                <li><a href="/teachers/login">家教登陆/注册</a></li>
+                <li><a href="#">家教注册</a></li>
                 <li><a href="#">社区</a></li>
                 @if(\Illuminate\Support\Facades\Session::has('users'))
                     <li class="dropdown">
@@ -70,48 +70,34 @@
 
 <div class="container">
     <div class="page-header">
-        <h1>欢迎来到最佳家教网 <small>学员<a href="/students/login">登陆</a>/注册</small></h1>
+        <h1>欢迎来到最佳家教网 <small>您所处位置为请家教登记</small></h1>
     </div>
     <div class="well well-lg">
         <form class="form-horizontal">
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">您的名字：</label>
+                <label for="inputEmail3" class="col-sm-2 control-label">您的称呼：</label>
                 <div class="col-sm-10">
-                    <input type="name" class="form-control" id="inputEmail3" placeholder="name ">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="nickname ">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputPassword3" class="col-sm-2 control-label">您的手机：</label>
                 <div class="col-sm-10">
-                    <input type="phone" class="form-control" id="inputPassword3" placeholder="iPhone">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="iPhone">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">电子邮件：</label>
+                <label for="inputPassword3" class="col-sm-2 control-label">所在区域：</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputPassword3" placeholder="email">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="location">
                 </div>
             </div>
-            <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
-                <label for="inputPassword3" class="col-sm-2 control-label">密码：</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control input-lg" placeholder="密码" name="password" required>
-                    @if ($errors->has('password'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('password') }}</strong>
-                        </span>
-                    @endif
-                </div>
-            </div>
-
             <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">确认密码：</label>
+                <label for="inputPassword3" class="col-sm-2 control-label">您的身份：</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control input-lg" placeholder="确认密码" name="password_confirmation" required>
+                    <input type="radio" name="radio" value="1">家长/学员<input type="radio" name="radio" value="2">家教机构
                 </div>
             </div>
-
-
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <div class="checkbox">
@@ -123,7 +109,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">注册</button>
+                    <button type="submit" class="btn btn-default">登记</button>
                 </div>
             </div>
         </form>
@@ -149,6 +135,7 @@
                             <a href="#">请家教注册</a> |
                             <a href="#">家教注册</a> |
                             <a href="#">社区</a> |
+                            <a href="#">会员管理</a> |
                             <a href="#">联系我们</a>
                         </p>
                     </div>

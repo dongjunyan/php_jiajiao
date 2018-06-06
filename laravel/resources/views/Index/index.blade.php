@@ -173,14 +173,14 @@
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="/index">
+				<a class="navbar-brand" href="index.html">
 					<img src="{{ asset('images/logo.png') }}" alt="Techro HTML5 template"></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right mainNav">
-					<li class="active"><a href="/index">首页</a></li>
-					<li><a href="/students/login">学员登陆/注册</a></li>
-					<li><a href="/teachers/login">家教登陆/注册</a></li>
+					<li class="active"><a href="index.html">首页</a></li>
+					<li><a href="#">请家教登记</a></li>
+					<li><a href="#">家教注册</a></li>
 					<li><a href="#">社区</a></li>
 					@if(\Illuminate\Support\Facades\Session::has('users'))
 						<li class="dropdown">
@@ -436,6 +436,7 @@
 								<a href="#">请家教注册</a> |
 								<a href="#">家教注册</a> |
 								<a href="#">社区</a> |
+								<a href="#">用户管理</a> |
 								<a href="/contact">联系我们</a>
 							</p>
 						</div>

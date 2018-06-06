@@ -49,6 +49,7 @@
                         <nav>
                             <ul class="nav masthead-nav">
                                 <li class="active"><a href="/index">前往首页</a></li>
+                                <li><a href="/users/register">用户注册</a></li>
                                 <li><a href="/contact">联系我们</a></li>
                             </ul>
                         </nav>

@@ -33,8 +33,8 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right mainNav">
                 <li class="active"><a href="/index">首页</a></li>
-                <li><a href="/students">请家教登记</a></li>
-                <li><a href="/teachers">家教注册</a></li>
+                <li><a href="#">请家教登记</a></li>
+                <li><a href="#">家教注册</a></li>
                 <li><a href="#">社区</a></li>
                 @if(\Illuminate\Support\Facades\Session::has('users'))
                     <li class="dropdown">
