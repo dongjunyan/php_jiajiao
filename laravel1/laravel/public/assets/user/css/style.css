@@ -319,9 +319,9 @@ div.zoomMask { position:absolute; background:url(../images/mask.png)repeat scrol
 
 
 /*介绍*/
-.introduceMain{width:80%;float:left;background:#fff ;}
-.browse{display:block; float:left;width:20% ;}
-.browse ul{border:1px solid #D4D4D4 ;width: 90%;}
+.introduceMain{width:100%;float:left;background:#fff ;}
+.browse{display:block; float:right;width:27% ;margin-top: 5px;margin-right: -20px}
+.browse ul{border:1px solid #339966 ;width: 90%;}
 .browse ul .mt{background-color: #f7f7f7}
 .browse ul li {margin:0px 10px;padding:12px 0px;border-top: 1px dotted #DEDEDE;}
 .browse ul li.first {border-top:none;}
@@ -342,7 +342,7 @@ ul.am-tabs-nav.am-nav.am-nav-tabs {left:20% ;max-width:960px ;background: #F5F5F
 
  {	   
 .item-inform ,.match,.introduceMain,.am-breadcrumb-slash{max-width: 1200px;}
-.clearfixLeft {margin-left: 10px;width: 400px;}
+.clearfixLeft {margin-left: 10px;width: 230px;}
 /*放大镜*/
 .tb-s310, .tb-s310 a ,.tb-s310, .tb-s310 img { height:400px; width:400px;}
 .clearfixRight {width: 700px;}

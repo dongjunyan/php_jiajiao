@@ -72,16 +72,18 @@
                                         <div class="col-sm-5">
                                             <a href="{{ url("/home/products/{$product->id}") }}">
                                                 <figure class="deal-thumbnail embed-responsive embed-responsive-16by9 col-absolute-cell" data-bg-img="{{ $productPresenter->getThumbLink($product->thumb) }}">
-                                                    <div class="label-discount left-20 top-15">-50%</div>
-                                                    <ul class="deal-actions top-15 right-20">
-                                                        <li  class="like-deal" data-id="{{ $product->id }}">
-                                                            <span>
-                                                                <i class="fa fa-heart"></i>
-                                                            </span>
-                                                        </li>
-                                                    </ul>
+
+
                                                 </figure>
                                             </a>
+                                                <ul class="deal-actions top-15 right-20">
+                                                    <li class="like-deal" id="like-deal" data-id="{{ $product->id }}">
+                                                            <span>
+                                                                     <i class="fa fa-heart"></i>
+                                                            </span>
+                                                    </li>
+                                                </ul>
+
                                         </div>
                                         <div class="col-sm-7">
                                             <div class="bg-white pt-20 pl-20 pr-15">
@@ -133,6 +135,9 @@
 
 @section('script')
     <script>
+        //alert("Hello World!");
+
+        // language=JQuery-CSS
         $('.like-deal').click(function(){
             var id = $(this).data('id');
 
@@ -142,11 +147,11 @@
             return false;
         });
 
-        $('.like-deal').hover(function(){
+       /*$('.like-deal').hover(function(){
             $(this).find('i').css('color', 'red');
         }, function(){
             $(this).find('i').css('color', '#fff');
-        });
+        });*/
     </script>
     <script>
         $('#order-select').change(function(){

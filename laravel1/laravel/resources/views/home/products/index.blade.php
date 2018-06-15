@@ -9,7 +9,7 @@
                 <section class="stores-area stores-area-v2">
                     <h3 class="mb-40 t-uppercase">分类列表</h3>
                     <div class="letters-toolbar p-10 panel mb-40">
-                        <span class="all-stores"><a href="#">选择商品</a></span>
+                        <span class="all-stores"><a href="#">选择教师</a></span>
 
                         @foreach ($productPinyins as $pinyin)
                             <span>
@@ -18,7 +18,7 @@
                         @endforeach
                     </div>
                     <div class="stores-cat panel mb-40">
-                        <h3 class="stores-cat-header" id="pinyin_char">随机展示商品</h3>
+                        <h3 class="stores-cat-header" id="pinyin_char">随机展示教师</h3>
                         <ul class="row stores-cat-body" id="data">
 
                             <li class="col-sm-4">

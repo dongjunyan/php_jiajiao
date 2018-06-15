@@ -24,9 +24,9 @@
         {{ csrf_field() }}
 
         <div class="row cl {{ $errors->has('name') ? 'has-error' : '' }}">
-            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>教师姓名：</label>
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>课程名称：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" placeholder="教师姓名" value="{{ old('name') }}" name="name" required>
+                <input type="text" class="input-text" placeholder="课程名称" value="{{ old('name') }}" name="name" required>
                 @if ($errors->has('name'))
                     <span class="help-block">
                         <strong>{{ $errors->first('name') }}</strong>
@@ -123,7 +123,7 @@
         <div class="row cl {{ $errors->has('title') ? 'has-error' : '' }}">
             <label class="form-label col-xs-4 col-sm-2">教师描述：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <textarea name="title" cols="" rows="" class="textarea valid" placeholder="教师的基本描述，30个字以内" >{{ old('title') }}</textarea>
+                <textarea name="title" cols="" rows="" class="textarea valid" placeholder="教师的基本描述，如：姓名，年龄，性别，职称。30个字以内" >{{ old('title') }}</textarea>
                 @if ($errors->has('title'))
                     <span class="help-block">
                         <strong>{{ $errors->first('title') }}</strong>
@@ -132,7 +132,7 @@
             </div>
         </div>
         <div class="row cl {{ $errors->has('description') ? 'has-error' : '' }}">
-            <label class="form-label col-xs-4 col-sm-2">教师详情：</label>
+            <label class="form-label col-xs-4 col-sm-2">课程详情：</label>
             <div class="formControls col-xs-8 col-sm-9">
                 <textarea name="description" id="description" style="display: none;">{{ old('description') }}</textarea>
                 @if ($errors->has('description'))

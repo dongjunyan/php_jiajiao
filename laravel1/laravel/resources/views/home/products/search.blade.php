@@ -37,7 +37,6 @@
                                         <div class="col-sm-5">
                                             <a href="{{ url("/home/products/{$product->id}") }}">
                                                 <figure class="deal-thumbnail embed-responsive embed-responsive-16by9 col-absolute-cell" data-bg-img="{{ $productPersenter->getThumbLink($product->thumb) }}">
-                                                    <div class="label-discount left-20 top-15">-50%</div>
                                                     <ul class="deal-actions top-15 right-20">
                                                         <li  class="like-deal" data-id="{{ $product->id }}">
                                                             <span>
@@ -67,9 +66,6 @@
                                                 </div>
                                                 <div class="deal-price pos-r mb-15">
                                                     <h3 class="price ptb-5 text-right">
-                                                                <span class="price-sale">
-                                                                    {{ $product->price_original }}
-                                                                </span>
                                                         ￥ {{ $product->price }}
                                                     </h3>
                                                 </div>

@@ -17,6 +17,9 @@ class AddressesController extends Controller
         'msg' => '服务器异常，请稍后再试',
     ];
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $addresses = $this->guard()->user()->addresses;
@@ -27,7 +30,6 @@ class AddressesController extends Controller
 
         return view('user.addresses.index', compact('addresses', 'provinces', 'cities'));
     }
-
 
     public function store(AddressRequest $request)
     {

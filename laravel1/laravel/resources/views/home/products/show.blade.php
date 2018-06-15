@@ -6,65 +6,39 @@
         @inject('productPresenter', 'App\Presenters\ProductPresenter')
         <!--放大镜-->
 
-        <div class="item-inform">
-            <div class="clearfixLeft" id="clearcontent">
 
-                <div class="box">
-                    <script type="text/javascript">
-                        $(document).ready(function() {
-                            $(".jqzoom").imagezoom();
-                            $("#thumblist li a").click(function() {
-                                $(this).parents("li").addClass("tb-selected").siblings().removeClass("tb-selected");
-                                $("#jqzoom").attr('src', $(this).find("img").attr("src"));
-                            });
-                        });
-                    </script>
 
-                    <div class="tb-booth tb-pic tb-s310">
-                        <img src="{{ $productPresenter->getThumbLink($product->thumb) }}" alt="{{ $product->name }}" id="jqzoom" />
-                    </div>
-                    <ul class="tb-thumb" id="thumblist">
-                        @foreach ($product->productImages as $key => $image)
-                            <li class="{{ $key == 0 ? 'tb-selected' : '' }}">
-                                <div class="tb-pic tb-s40">
-                                    <a href="javascript:;">
-                                        <img src="{{ $productPresenter->getThumbLink($image->link) }}">
-                                    </a>
-                                </div>
-                            </li>
-                        @endforeach
-                    </ul>
+
+            <div class="item-inform" >
+                <hr style="height:1px;border:none;border-top:1px solid #CDC9C9;" />
+            <div class="clearfixRight" style="width: 800px;">
+                <div>
+                    <p style="font-size:30px;font-weight:bolder" >{{ $product->name }} </p>
+                    <br/>
                 </div>
-
+                <div class="clearfixLeft">
+                    <img src="{{ $productPresenter->getThumbLink($product->thumb) }}"/>
+                </div>
                 <div class="clear"></div>
-            </div>
-
-            <div class="clearfixRight">
-
-                <!--规格属性-->
-                <!--名称-->
-                <div class="tb-detail-hd">
-                    <h1>
-                        {{ $product->name }}
-                    </h1>
-                </div>
                 <div class="tb-detail-list">
-                    <!--价格-->
-                    <div class="tb-detail-price">
-                        <li class="price iteminfo_price">
-                            <dt>促销价</dt>
-                            <dd><em>¥</em><b class="sys_item_price">{{ $product->price }}</b>  </dd>
-                        </li>
-                        <li class="price iteminfo_mktprice">
-                            <dt>原价</dt>
-                            <dd><em>¥</em><b class="sys_item_mktprice">{{ $product->price_original }}</b></dd>
+                    <div class="tb-detail-price" style="background:white">
+                        <li class="" >
+
+                            <dt>教师简介</dt>
+                            <dd>{{ $product->title }} </dd>
                         </li>
                         <div class="clear"></div>
+                        <br>
                     </div>
-
+                    <div class="clear"></div>
+                    <br>
+                    <div>
+                            <dd>课程价格: &nbsp; <em>¥</em><b class="sys_item_price">{{ $product->price }}</b>  </dd>
+                    </div>
+                    <br>
                     <!--地址-->
                     <dl class="iteminfo_parameter freight">
-                        <dt>收货地址</dt>
+                        <dt>教学区</dt>
                         <div class="iteminfo_freprice">
                             <div class="am-form-content address">
 
@@ -75,7 +49,7 @@
                                         @endforeach
                                     </select>
                                 @else
-                                    <a style="line-height:27px;color:red;" href="{{ url('user')  }}">添加收货地址</a>
+                                    <a style="line-height:27px;color:red;" href="{{ url('user')  }}">添加教学区</a>
                                 @endif
 
                             </div>
@@ -83,35 +57,26 @@
                     </dl>
                     <div class="clear"></div>
 
-                    <!--销量-->
-                  {{--  <ul class="tm-ind-panel">
-                        <li class="tm-ind-item tm-ind-sumCount canClick">
-                            <div class="tm-indcon"><span class="tm-label">累计销量</span><span class="tm-count">{{ $product->safe_count }}</span></div>
-                        </li>
-                        <li class="tm-ind-item tm-ind-reviewCount canClick tm-line3">
-                            <div class="tm-indcon"><span class="tm-label">累计评价</span><span class="tm-count">640</span></div>
-                        </li>
-                    </ul>--}}
                     <div class="clear"></div>
 
                     <!--各种规格-->
                     <dl class="iteminfo_parameter sys_item_specpara">
-                        <dt class="theme-login"><div class="cart-title">可选规格<span class="am-icon-angle-right"></span></div></dt>
+                        {{--<dt class="theme-login"><div class="cart-title">可选规格<span class="am-icon-angle-right"></span></div></dt>--}}
                         <dd>
                             <!--操作页面-->
 
-                            <div class="theme-popover-mask"></div>
+                            {{--<div class="theme-popover-mask"></div>--}}
 
                             <div class="theme-popover">
-                                <div class="theme-span"></div>
-                                <div class="theme-poptit">
+                                {{--<div class="theme-span"></div>--}}
+                                {{--<div class="theme-poptit">
                                     <a href="javascript:;" title="关闭" class="close">×</a>
-                                </div>
+                                </div>--}}
                                 <div class="theme-popbod dform">
                                     <form class="theme-signin" name="" action="" method="post">
 
                                         <div class="theme-signin-left">
-                                            @foreach ($product->productAttributes()->get()->groupBy('attribute')->toArray() as $item => $attrs)
+                                            {{--@foreach ($product->productAttributes()->get()->groupBy('attribute')->toArray() as $item => $attrs)
                                                 <div class="theme-options">
                                                     <div class="cart-title">{{ $item }}</div>
                                                     <ul>
@@ -120,34 +85,33 @@
                                                         @endforeach
                                                     </ul>
                                                 </div>
-                                            @endforeach
+                                            @endforeach--}}
                                             <div class="theme-options">
                                                 <div class="cart-title number">数量</div>
                         <dd>
                             <input id="min" class="am-btn am-btn-default" type="button" value="-" />
                             <input id="text_box" name="numbers" type="text" value="1" style="width:30px;" />
                             <input id="add" class="am-btn am-btn-default"  type="button" value="+" />
-                            <span id="Stock" class="tb-hidden">库存<span class="stock">{{ $product->productDetail->count }}</span>件</span>
+                            <span id="Stock" class="tb-hidden">剩余班容量<span class="stock">{{ $product->productDetail->count }}</span>人</span>
                         </dd>
 
 
                 </div>
+
                 <div class="clear"></div>
 
 
             </div>
+            </div>
 
 
-            </form>
-        </div>
+
+
     </div>
 
-    </dd>
-    </dl>
     <div class="clear"></div>
     <!--活动	-->
 
-    </div>
 
     <div class="pay">
         <div class="pay-opt">
@@ -180,7 +144,7 @@
         </li>
         <li>
             <div class="clearfix tb-btn tb-btn-basket">
-                <a  title="加入购物车" href="javascript:;"  id="addCar"><i></i>加入购物车</a>
+                <a  title="加入订单" href="javascript:;"  id="addCar"><i></i>加入订单</a>
             </div>
         </li>
     </div>
@@ -188,8 +152,8 @@
 
     </div>
 
-    <div class="clear"></div>
 
+    <div class="clear"></div>
     </div>
 
 
@@ -202,10 +166,10 @@
             <div class="mc">
                 <ul>
                     <div class="mt">
-                        <h2>推荐</h2>
+                        <p style="font-size: 18px;font-weight: bold ;height:65px;"><br>推&nbsp;&nbsp;荐</p>
                     </div>
 
-                    {{--@foreach ($recommendProducts as $recommendProduct)
+                    @foreach ($recommendProducts as $recommendProduct)
                         <li class="first">
                             <div class="p-img">
                                 <a href="{{ url("/home/products/{$recommendProduct->id}") }}">
@@ -219,37 +183,25 @@
                             <div class="p-price"><strong>
                                     ￥ {{ $recommendProduct->price }}
                                 </strong></div>
+                            <hr style="height:1px;border:none;border-top:1px solid #CDC9C9;" />
                         </li>
-                    @endforeach--}}
+                    @endforeach
 
                 </ul>
             </div>
         </div>
-        <div class="introduceMain">
+        <br>
+
+        <div style="margin-left: 10px;width:68%;">
             <div class="am-tabs" data-am-tabs>
-                <ul class="am-avg-sm-3 am-tabs-nav am-nav am-nav-tabs">
-                    <li class="am-active">
-                        <a href="#">
 
-                            <span class="index-needs-dt-txt">宝贝详情</span></a>
-
-                    </li>
-
-                  {{--  <li>
-                        <a href="#">
-
-                            <span class="index-needs-dt-txt">全部评价</span></a>
-
-                    </li>--}}
-                </ul>
-
+                    <span style="font-size: 20px;font-weight: bold">课程详情</span>
+                <hr style="height:1px;border:none;border-top:1px solid #CDC9C9;" />
                 <div class="am-tabs-bd">
 
                     <div class="am-tab-panel am-fade am-in am-active">
                         <div class="details">
-                            <div class="attr-list-hd after-market-hd">
-                                <h4>商品细节</h4>
-                            </div>
+                            <br/>
                             <div class="twlistNews">
                                 {!! $product->productDetail->description !!}
                             </div>
@@ -258,14 +210,7 @@
 
                     </div>
 
-                    <div class="am-tab-panel am-fade">
-
-
-                        <div class="tb-reviewsft">
-                            <div class="tb-rate-alert type-attention">购买前请查看该商品的 <a href="#" target="_blank">购物保障</a>，明确您的售后保障权益。</div>
-                        </div>
-
-                    </div>
+                   {
 
                 </div>
 
@@ -273,22 +218,11 @@
 
             <div class="clear"></div>
 
-            <div class="footer">
-                {{--<div class="footer-hd">
-                    <p>
-                        <a href="#">爱网购</a>
-                        <b>|</b>
-                        <a href="#">商城首页</a>
-                        <b>|</b>
-                        <a href="#">支付宝</a>
-                        <b>|</b>
-                        <a href="#">物流</a>
-                    </p>
-                </div>--}}
-                @include('common.home.footer')
-            </div>
-        </div>
 
+        </div>
+        <div class="footer">
+            @include('common.home.footer')
+        </div>
     </div>
     </div>
     <form id="pay_form" action="{{ url('/user/pay/show') }}" method="post">
@@ -370,7 +304,7 @@
                     if (res.code == 302) {
                         Car.addProduct(product_id);
                     }
-                    layer.msg('加入购物车成功');
+                    layer.msg('加入订单成功');
                     car_nums.text(parseInt(car_nums.text())+1);
                 });
             }

@@ -125,34 +125,6 @@
         var token = "{{ csrf_token() }}";
 
 
-        {{--@auth
-        syncCarsToDatabase();
-        function syncCarsToDatabase()
-        {
-            if (localStorage.length > 0) {
-                layer.confirm('是否同步本地订单到本账户下', {
-                    btn: ['是', '否'],
-                }, function(){
-                    layer.closeAll();
-                    var cars = localStorage;
-                    for (var i in cars) {
-                        var product = $.parseJSON(cars[i]);
-
-                        var data = {product_id: i, numbers: product.numbers, _token: token};
-                        var url = "{{ url('/home/cars') }}";
-                        console.log(product);
-
-                        $.post(url, data, function (res) {
-                            layer.msg('同步订单成功，请刷新查看');
-                        });
-                    }
-
-                    localStorage.clear();
-                }, function(){});
-            }
-        }
-        @endauth--}}
-
         @guest
             for (var i in cars) {
 

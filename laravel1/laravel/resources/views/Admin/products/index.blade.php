@@ -19,8 +19,9 @@
                     <thead>
                     <tr class="text-c">
                         <th width="40"><input name="" type="checkbox" value=""></th>
-                        <th width="50">教师姓名</th>
+                        <th width="50">课程名称</th>
                         <th width="50">教师照片</th>
+                        <th width="80">教师描述</th>
                         <th width="80">课程总价</th>
                         <th width="80">收藏数</th>
                         <th width="100">状态</th>
@@ -38,6 +39,9 @@
                             </td>
                             <td class="text-l">
                                 <img style="height: 90px;width:auto;" title="{{ $product->name }}" src="{{ $productPresenter->getThumbLink($product->thumb) }}">
+                            </td>
+                            <td>
+                                {{ $product->title }}
                             </td>
                             <td>
                                 {{ $product->price }}
